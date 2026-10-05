@@ -2,56 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Options Dashboard Demo | Akash</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <meta name="description" content="Interactive demo of an options and portfolio activity dashboard. All data is synthetic.">
+  <style>
+    :root { color-scheme: light; --bg: #F7F7F9; }
+    html, body { height: 100%; }
+    body { margin: 0; background: var(--bg); -webkit-font-smoothing: antialiased;
+      font: 14px -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #141413; }
+    #root { min-height: 100%; }
+    .demo-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      padding: 10px 20px; background: #E8F0FE; color: #0B2F5E; font-size: 13px; line-height: 1.4; }
+    .demo-bar a { color: #0A63D6; font-weight: 600; text-decoration: none; white-space: nowrap; }
+    .demo-bar a:hover { text-decoration: underline; }
+    #boot-fallback { display: flex; align-items: center; justify-content: center; min-height: 60vh; color: #667085; }
+  </style>
 </head>
 <body>
-  <nav>
-    <div class="wrap">
-      <a class="brand" href="index.html">Akash</a>
-      <div class="links"><a href="index.html">&larr; Back to portfolio</a></div>
-    </div>
-  </nav>
-
-  <main class="wrap" style="padding-top:28px">
-    <h1 style="margin:0 0 8px">Options Transaction Dashboard</h1>
-    <div class="banner">Demo only: all trades, tickers, and numbers below are made-up sample data. Not investment advice.</div>
-
-    <div class="kpis" id="kpis"></div>
-
-    <div class="charts">
-      <div class="chartbox"><h3>Cumulative realized P&amp;L</h3><canvas id="cumChart"></canvas></div>
-      <div class="chartbox"><h3>Realized P&amp;L by ticker</h3><canvas id="tickerChart"></canvas></div>
-    </div>
-
-    <div class="filters">
-      <select id="fTicker"><option value="">All tickers</option></select>
-      <select id="fType">
-        <option value="">All strategies</option>
-        <option>Cash-Secured Put</option>
-        <option>Covered Call</option>
-      </select>
-      <select id="fStatus">
-        <option value="">All statuses</option>
-        <option>Closed</option>
-        <option>Open</option>
-      </select>
-    </div>
-
-    <div class="tablewrap">
-      <table>
-        <thead><tr>
-          <th>Opened</th><th>Ticker</th><th>Strategy</th><th>Strike</th><th>Expiry</th>
-          <th>Contracts</th><th>Premium</th><th>Status</th><th>P&amp;L</th>
-        </tr></thead>
-        <tbody id="rows"></tbody>
-      </table>
-    </div>
-  </main>
-
-  <footer><div class="wrap">Sample data for demonstration. Built with Chart.js.</div></footer>
-  <script src="dashboard.js"></script>
+  <div class="demo-bar">
+    <span><strong>Demo.</strong> Everything here is synthetic sample data, not real accounts or trades. Explore the tabs, filters, and charts.</span>
+    <a href="index.html">Back to portfolio</a>
+  </div>
+  <div id="root"><div id="boot-fallback">Loading dashboard…</div></div>
+  <script src="dashboard-app.js"></script>
 </body>
 </html>
