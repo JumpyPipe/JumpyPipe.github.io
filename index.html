@@ -13,7 +13,7 @@
     // Apply a saved theme choice before first paint, so there is no flash.
     try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="home.css?v=26">
+  <link rel="stylesheet" href="home.css?v=27">
 </head>
 <body>
   <div class="shell">
@@ -457,11 +457,11 @@
 
     // Beyond work: add a photo by setting img, for example img: "entryway.jpg". Without one, the card shows a placeholder.
     var homeProjects = [
-      { title: "Entryway", desc: "Building out our entryway.", img: "", c: "#a393f6",
+      { title: "Entryway", desc: "Building out our entryway.", img: "house-entryway.png?v=1", c: "#a393f6",
         icon: '<path d="M6 21V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17"/><path d="M3 21h18"/><circle cx="15" cy="12.5" r=".8"/>' },
-      { title: "Wainscoting entertainment wall", desc: "Wainscoting and an entertainment wall in the living room.", img: "", c: "#4cc3d9",
+      { title: "Wainscoting entertainment wall", desc: "Wainscoting and an entertainment wall in the living room.", img: "house-wainscoting.png?v=1", c: "#4cc3d9",
         icon: '<rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 10h18M9 10v10M15 10v10"/>' },
-      { title: "Primary bedroom built-in closet", desc: "A built-in closet for the primary bedroom.", img: "", c: "#f6a85c",
+      { title: "Primary bedroom built-in closet", desc: "A built-in closet for the primary bedroom.", img: "house-closet.png?v=1", c: "#f6a85c",
         icon: '<rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18M4 9h16"/><path d="M8 13v2M16 13v2"/>' }
     ];
     (function renderGallery() {
