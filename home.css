@@ -158,6 +158,13 @@ h2 { margin: 34px 0 16px; font-size: 1.2rem; letter-spacing: -.015em; }
 .proj.ghost .thumb { display: grid; place-items: center; border-style: dashed; box-shadow: none; background: transparent; color: var(--muted); font-size: .9rem; }
 .proj.ghost:hover { transform: none; }
 
+/* experience: entries rise into place, one after another (replays each time the tab opens) */
+.tab[data-tab="experience"]:not([hidden]) { animation: none; }
+.rise { animation: rise .42s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(var(--i, 0) * 55ms); }
+.tl li.rise::before { animation: pop .38s cubic-bezier(.3, 1.4, .5, 1) both; animation-delay: calc(var(--i, 0) * 55ms + 140ms); }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } }
+@keyframes pop { from { transform: scale(.3); opacity: 0; } }
+
 /* contact */
 .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
 .btn {
@@ -201,4 +208,5 @@ h2 { margin: 34px 0 16px; font-size: 1.2rem; letter-spacing: -.015em; }
   html { scroll-behavior: auto; }
   .tab:not([hidden]) { animation: none; }
   .proj, .proj .thumb { transition: none; }
+  .rise, .tl li.rise::before { animation: none; }
 }
