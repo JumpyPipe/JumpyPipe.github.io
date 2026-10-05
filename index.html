@@ -3,221 +3,210 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0f1419">
+  <meta name="theme-color" content="#0e1318">
   <title>Akash | Product &amp; AI Builder</title>
-  <meta name="description" content="Product leader in search, recommendations, and personalization. Side projects, including an options dashboard demo.">
+  <meta name="description" content="Product leader in search, recommendations, and personalization. Side projects, including a portfolio activity dashboard you can try.">
+  <meta property="og:title" content="Akash | Product &amp; AI Builder">
+  <meta property="og:description" content="Product leader in search and recommendations. Try the portfolio dashboard demo.">
+  <meta property="og:image" content="dashboard-preview.jpg">
   <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap">
-      <a class="brand" href="#top">Akash</a>
-      <nav class="topnav" aria-label="Main">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a class="btn tonal small" href="dashboard.html">Open dashboard</a>
+  <div class="shell">
+
+    <aside class="side" aria-label="About Akash">
+      <div class="avatar" aria-hidden="true">A</div>
+      <h2 class="name" style="margin:0">Akash</h2>
+      <span class="role">Product leader</span>
+      <div class="rule"></div>
+      <ul class="contacts">
+        <li>
+          <a class="row" href="mailto:you@example.com" aria-label="Email">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg></span>
+            <span class="txt"><small>Email</small><span class="val">you@example.com</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="https://linkedin.com/in/akashsmehta" aria-label="LinkedIn">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+            <span class="txt"><small>LinkedIn</small><span class="val">akashsmehta</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="https://github.com/jumpypipe" aria-label="GitHub">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></span>
+            <span class="txt"><small>GitHub</small><span class="val">jumpypipe</span></span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <main class="panel">
+      <nav class="topnav" aria-label="Sections">
+        <a href="#about" data-nav="about">About</a>
+        <a href="#experience" data-nav="experience">Experience</a>
+        <a href="#work" data-nav="work">Work</a>
+        <a href="#contact" data-nav="contact">Contact</a>
       </nav>
-    </div>
-  </header>
 
-  <main id="top">
-    <div class="wrap hero">
-      <div class="hero-grid">
-        <div>
-          <h1>I build search, recommendation, and AI products.</h1>
-          <p class="lede">Ten years of helping people find what they are looking for. Now I build side projects end to end. The first one is an options dashboard you can try below.</p>
-          <div class="actions">
-            <a class="btn filled" href="dashboard.html">Try the dashboard</a>
-            <a class="btn outlined" href="#work">See my work</a>
+      <section class="tab" data-tab="about">
+        <h1 class="title">About</h1>
+        <div class="prose">
+          <p>I lead product for search and recommendations, with a team covering search quality, ranking, personalization, and AI-guided experiences. I like turning fuzzy problems into clear plans that engineers and executives both want to build.</p>
+          <p>Outside work, I build small AI-powered tools to learn by shipping. The latest is a portfolio activity dashboard. You can <a href="#work">try it in the Work tab</a>.</p>
+        </div>
+        <h2>What I do for teams</h2>
+        <div class="svc">
+          <div class="card">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+            <div><h3>Search and discovery</h3><p>Helping people find what they came for, from query understanding to ranking quality.</p></div>
+          </div>
+          <div class="card">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></span>
+            <div><h3>Personalization and recommendations</h3><p>Showing each person what is most relevant to them, and measuring that it works.</p></div>
+          </div>
+          <div class="card">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span>
+            <div><h3>AI-guided experiences</h3><p>Using language models where they make a product simpler, not just newer.</p></div>
+          </div>
+          <div class="card">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+            <div><h3>Strategy and alignment</h3><p>Roadmaps, PRDs, and executive updates that keep product, engineering, and ML teams moving together.</p></div>
           </div>
         </div>
+      </section>
 
-        <div class="pcard" aria-label="Sample portfolio chart">
-          <div class="pcard-top">
-            <div>
-              <div class="title" id="pTitle">Realized P&amp;L</div>
-              <div class="sub">Wheel strategy, 22 closed trades</div>
-            </div>
-            <span class="badge">Sample data</span>
-          </div>
-          <div class="pvalue" id="pValue">$3,755</div>
-          <div class="pdelta up" id="pDelta">Since January</div>
-          <div class="pdate" id="pDate">Drag across the chart</div>
-          <div class="chart" id="chart" role="img" aria-label="Line chart of cumulative sample profit and loss">
-            <svg class="reveal" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true">
-              <path class="line" id="line" d=""/>
-            </svg>
-            <div class="cursor" id="cursor"></div>
-            <div class="dot" id="dot"></div>
-          </div>
-          <div class="pfoot">
-            <div class="segmented" role="group" aria-label="Chart metric">
-              <button type="button" data-metric="pnl" aria-pressed="true">Realized P&amp;L</button>
-              <button type="button" data-metric="prem" aria-pressed="false">Premium</button>
-            </div>
-            <a href="dashboard.html">Open full dashboard</a>
-          </div>
+      <section class="tab" data-tab="experience" hidden>
+        <h1 class="title">Experience</h1>
+
+        <div class="tl-head">
+          <span class="ico"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+          <h2>Roles</h2>
         </div>
-      </div>
-    </div>
+        <ol class="tl">
+          <li>
+            <h3>Associate Director, Product (Search and Recommendations)</h3>
+            <span class="when">Year &ndash; Present</span>
+            <p>Replace this with two or three results: what changed, by how much, and your part in it.</p>
+          </li>
+          <li>
+            <h3>Previous role, company</h3>
+            <span class="when">Year &ndash; Year</span>
+            <p>Lead with the outcome, then the scope of the team and the problem.</p>
+          </li>
+          <li>
+            <h3>Earlier role, company</h3>
+            <span class="when">Year &ndash; Year</span>
+            <p>One line is enough for earlier roles.</p>
+          </li>
+        </ol>
 
-    <section id="work">
-      <div class="wrap">
-        <h2>Work</h2>
-        <div class="work">
-          <article class="tile feature">
-            <span class="status">Live demo</span>
-            <h3>Options transaction dashboard</h3>
-            <p>Track premium collected, realized profit and loss, and win rate for a wheel-style options strategy. Filter by ticker, strategy, and status. The demo runs on sample data only.</p>
-            <div class="chips"><span class="chip filled">JavaScript</span><span class="chip filled">Chart.js</span><span class="chip filled">Data visualization</span></div>
-            <a class="link" href="dashboard.html">Open the demo</a>
-          </article>
-          <article class="tile half">
-            <span class="status wip">In progress</span>
-            <h3>Sidecar</h3>
-            <p>A companion for people who sell options. It tracks your positions, surfaces ideas worth a look, and shares facts and probabilities without telling you what to buy or sell.</p>
-            <div class="chips"><span class="chip">AI-native</span><span class="chip">Consumer</span></div>
-          </article>
-          <article class="tile half">
-            <span class="status soon">Next</span>
-            <h3>Your next project here</h3>
-            <p>Add a short case study: the problem, what you built, and what happened. Edit this tile in index.html.</p>
-            <div class="chips"><span class="chip">Tag</span><span class="chip">Tag</span></div>
-          </article>
+        <div class="tl-head" style="margin-top:34px">
+          <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+          <h2>Education</h2>
         </div>
-      </div>
-    </section>
+        <ol class="tl">
+          <li>
+            <h3>Degree, university</h3>
+            <span class="when">Year &ndash; Year</span>
+            <p>Add the program or focus if it is relevant to the roles you want.</p>
+          </li>
+        </ol>
+      </section>
 
-    <section>
-      <div class="wrap">
-        <h2>What I work on</h2>
-        <div class="skills">
-          <span class="chip filled">Search quality</span>
-          <span class="chip filled">Ranking</span>
-          <span class="chip filled">Personalization</span>
-          <span class="chip filled">Recommendations</span>
-          <span class="chip filled">AI-guided shopping</span>
-          <span class="chip">Product strategy</span>
-          <span class="chip">PRDs and roadmaps</span>
-          <span class="chip">Working with engineering and ML teams</span>
+      <section class="tab" data-tab="work" hidden>
+        <h1 class="title">Work</h1>
+        <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+        <div class="grid" id="grid"></div>
+      </section>
+
+      <section class="tab" data-tab="contact" hidden>
+        <h1 class="title">Contact</h1>
+        <div class="prose">
+          <p>I am always glad to talk about search, recommendations, and building products with AI. The quickest way to reach me is LinkedIn or email.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="wrap">
-        <div class="bento">
-          <div class="widget w-about">
-            <h3>About</h3>
-            <p>I lead product for search and recommendations, with a team covering search quality, ranking, personalization, and AI-guided shopping. I like turning fuzzy problems into clear plans that engineers and executives both want to build.</p>
-            <p>Outside work, I build small AI-powered tools to learn by shipping.</p>
-          </div>
-          <div class="widget w-now">
-            <h3>Right now</h3>
-            <ul>
-              <li>Polishing this portfolio</li>
-              <li>Building Sidecar</li>
-              <li>Exploring AI-native consumer apps</li>
-            </ul>
-          </div>
-          <div class="widget w-contact" id="contact">
-            <h3>Get in touch</h3>
-            <div class="contact-actions">
-              <a class="btn filled" href="https://linkedin.com/in/akashsmehta">LinkedIn</a>
-              <a class="btn tonal" href="https://github.com/jumpypipe">GitHub</a>
-              <a class="btn outlined" href="mailto:you@example.com">Email</a>
-            </div>
-          </div>
+        <div class="cta">
+          <a class="btn filled" href="https://linkedin.com/in/akashsmehta">LinkedIn</a>
+          <a class="btn tonal" href="mailto:you@example.com">Email</a>
+          <a class="btn outlined" href="https://github.com/jumpypipe">GitHub</a>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer>
-    <div class="wrap">&copy; 2026 Akash. Built with plain HTML, CSS, and JavaScript.</div>
-  </footer>
+      <div class="foot">&copy; 2026 Akash. Built with plain HTML, CSS, and JavaScript.</div>
+    </main>
+  </div>
 
-  <nav class="tabbar" aria-label="Quick navigation">
-    <a href="#work">Work</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="dashboard.html">Dashboard</a>
+  <nav class="tabbar" aria-label="Sections">
+    <a href="#about" data-nav="about">About</a>
+    <a href="#experience" data-nav="experience">Experience</a>
+    <a href="#work" data-nav="work">Work</a>
+    <a href="#contact" data-nav="contact">Contact</a>
   </nav>
 
   <script>
-    // Sample data only: cumulative values by closing date for 22 sample trades.
-    var dates = ["2026-01-23","2026-01-30","2026-02-06","2026-02-13","2026-02-20","2026-02-27","2026-03-06","2026-03-13","2026-03-20","2026-03-27","2026-04-03","2026-04-10","2026-04-17","2026-04-24","2026-05-01","2026-05-08","2026-05-22","2026-05-29","2026-06-05","2026-06-19","2026-06-26","2026-09-25"];
-    var series = {
-      pnl:  { label: "Realized P&L", data: [210,530,725,385,645,935,1085,1295,1635,1880,2020,1500,1805,1925,2155,2415,2610,2830,3030,3220,3425,3755] },
-      prem: { label: "Premium collected", data: [210,530,725,910,1170,1460,1610,1820,2160,2405,2545,2855,3160,3280,3510,3770,3965,4185,4385,4575,4780,5110] }
-    };
-    var metric = "pnl";
-    var W = 600, H = 200, PAD = 8;
-    var el = function (id) { return document.getElementById(id); };
-    var chart = el("chart"), line = el("line"), cursor = el("cursor"), dot = el("dot");
-    var money = function (n) { return "$" + n.toLocaleString("en-US"); };
-    var fmtDate = function (d) {
-      return new Date(d + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
-    };
-    var styles = getComputedStyle(document.documentElement);
-
-    function pointAt(i) {
-      var d = series[metric].data;
-      var min = Math.min.apply(null, d), max = Math.max.apply(null, d);
-      var x = (i / (d.length - 1)) * W;
-      var y = H - PAD - ((d[i] - min) / (max - min || 1)) * (H - PAD * 2);
-      return { x: x, y: y };
-    }
-    function drawLine() {
-      var d = series[metric].data, path = "";
-      for (var i = 0; i < d.length; i++) {
-        var p = pointAt(i);
-        path += (i ? "L" : "M") + p.x.toFixed(1) + " " + p.y.toFixed(1);
+    // To add a project, add an object here. Each project opens its own page, with its own look.
+    var projects = [
+      {
+        title: "Portfolio activity dashboard",
+        category: "Data visualization",
+        desc: "Track options and portfolio activity: P&L, positions, income, and a screener. Runs on synthetic demo data.",
+        href: "dashboard.html",
+        img: "dashboard-preview.jpg",
+        alt: "Preview of the portfolio activity dashboard showing account value and growth"
       }
-      line.setAttribute("d", path);
-      var color = styles.getPropertyValue("--green").trim();
-      line.style.stroke = color;
-      dot.style.background = color;
-      rest();
-    }
-    function rest() {
-      var d = series[metric].data;
-      el("pTitle").textContent = series[metric].label;
-      el("pValue").textContent = money(d[d.length - 1]);
-      el("pDelta").textContent = "Since January";
-      el("pDate").textContent = "Drag across the chart";
-    }
-    function scrub(clientX) {
-      var rect = chart.getBoundingClientRect();
-      var frac = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
-      var d = series[metric].data;
-      var i = Math.round(frac * (d.length - 1));
-      var p = pointAt(i);
-      cursor.style.left = (p.x / W * 100) + "%";
-      dot.style.left = (p.x / W * 100) + "%";
-      dot.style.top = (p.y / H * 100) + "%";
-      el("pValue").textContent = money(d[i]);
-      el("pDelta").textContent = "+" + money(d[i]) + " so far";
-      el("pDate").textContent = fmtDate(dates[i]);
-    }
-    chart.addEventListener("pointerdown", function (e) { chart.classList.add("active"); scrub(e.clientX); });
-    chart.addEventListener("pointermove", function (e) {
-      if (e.pointerType === "mouse" || chart.classList.contains("active")) { chart.classList.add("active"); scrub(e.clientX); }
-    });
-    ["pointerleave", "pointerup", "pointercancel"].forEach(function (t) {
-      chart.addEventListener(t, function () { chart.classList.remove("active"); rest(); });
-    });
-    document.querySelectorAll(".segmented button").forEach(function (b) {
-      b.addEventListener("click", function () {
-        metric = b.dataset.metric;
-        document.querySelectorAll(".segmented button").forEach(function (o) {
-          o.setAttribute("aria-pressed", String(o === b));
-        });
-        drawLine();
+    ];
+
+    var tabs = ["about", "experience", "work", "contact"];
+    var titles = { about: "About", experience: "Experience", work: "Work", contact: "Contact" };
+
+    function route() {
+      var h = (location.hash || "#about").slice(1);
+      if (tabs.indexOf(h) < 0) h = "about";
+      document.querySelectorAll("[data-tab]").forEach(function (s) { s.hidden = s.dataset.tab !== h; });
+      document.querySelectorAll("[data-nav]").forEach(function (a) {
+        if (a.dataset.nav === h) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
       });
-    });
-    drawLine();
+      document.title = titles[h] + " | Akash";
+      window.scrollTo(0, 0);
+    }
+
+    var active = "All";
+    function renderWork() {
+      var cats = ["All"];
+      projects.forEach(function (p) { if (cats.indexOf(p.category) < 0) cats.push(p.category); });
+      var f = document.getElementById("filters");
+      f.innerHTML = "";
+      cats.forEach(function (c) {
+        var b = document.createElement("button");
+        b.type = "button"; b.className = "chip"; b.textContent = c;
+        b.setAttribute("aria-pressed", String(c === active));
+        b.addEventListener("click", function () { active = c; renderWork(); });
+        f.appendChild(b);
+      });
+      var g = document.getElementById("grid");
+      g.innerHTML = "";
+      projects.filter(function (p) { return active === "All" || p.category === active; }).forEach(function (p) {
+        var a = document.createElement("a");
+        a.className = "proj"; a.href = p.href;
+        var t = document.createElement("div"); t.className = "thumb";
+        var img = document.createElement("img"); img.src = p.img; img.alt = p.alt; img.loading = "lazy";
+        t.appendChild(img); a.appendChild(t);
+        [["h3", p.title], ["p", p.category, "cat"], ["p", p.desc, "desc"]].forEach(function (x) {
+          var e = document.createElement(x[0]); e.textContent = x[1]; if (x[2]) e.className = x[2]; a.appendChild(e);
+        });
+        g.appendChild(a);
+      });
+      if (active === "All") {
+        var ghost = document.createElement("div");
+        ghost.className = "proj ghost"; ghost.setAttribute("aria-hidden", "true");
+        ghost.innerHTML = '<div class="thumb">Next project coming soon</div>';
+        g.appendChild(ghost);
+      }
+    }
+
+    window.addEventListener("hashchange", route);
+    renderWork();
+    route();
   </script>
 </body>
 </html>
