@@ -2,72 +2,222 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f1419">
   <title>Akash | Product &amp; AI Builder</title>
-  <meta name="description" content="Product leader and hands-on builder. Portfolio of projects, including a demo options-trading dashboard.">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Product leader in search, recommendations, and personalization. Side projects, including an options dashboard demo.">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <nav>
+  <header class="topbar">
     <div class="wrap">
-      <a class="brand" href="index.html">Akash</a>
-      <div class="links">
-        <a href="#projects">Projects</a>
+      <a class="brand" href="#top">Akash</a>
+      <nav class="topnav" aria-label="Main">
+        <a href="#work">Work</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-      </div>
+        <a class="btn tonal small" href="dashboard.html">Open dashboard</a>
+      </nav>
     </div>
-  </nav>
-
-  <header class="hero wrap">
-    <h1>I build products people use every day, and the tools behind them.</h1>
-    <p>Product leader with a decade in search, recommendations, and personalization, now building AI-native side projects end to end.</p>
-    <a class="btn primary" href="dashboard.html">View the options dashboard demo</a>
-    <a class="btn" href="#projects">See all projects</a>
   </header>
 
-  <main class="wrap">
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Options Transaction Dashboard</h3>
-          <p>Tracks premium income, realized P&amp;L, and win rate for a wheel-style options strategy. Demo uses sample data.</p>
-          <span class="tag">JavaScript</span><span class="tag">Chart.js</span><span class="tag">Data viz</span><br>
-          <a href="dashboard.html">Open demo &rarr;</a>
+  <main id="top">
+    <div class="wrap hero">
+      <div class="hero-grid">
+        <div>
+          <h1>I build search, recommendation, and AI products.</h1>
+          <p class="lede">Ten years of helping people find what they are looking for. Now I build side projects end to end. The first one is an options dashboard you can try below.</p>
+          <div class="actions">
+            <a class="btn filled" href="dashboard.html">Try the dashboard</a>
+            <a class="btn outlined" href="#work">See my work</a>
+          </div>
         </div>
-        <div class="card">
-          <h3>Project two</h3>
-          <p>Replace this with another project: the problem, what you built, and the result.</p>
-          <span class="tag">Tag</span><span class="tag">Tag</span><br>
-          <a href="#">Link &rarr;</a>
+
+        <div class="pcard" aria-label="Sample portfolio chart">
+          <div class="pcard-top">
+            <div>
+              <div class="title" id="pTitle">Realized P&amp;L</div>
+              <div class="sub">Wheel strategy, 22 closed trades</div>
+            </div>
+            <span class="badge">Sample data</span>
+          </div>
+          <div class="pvalue" id="pValue">$3,755</div>
+          <div class="pdelta up" id="pDelta">Since January</div>
+          <div class="pdate" id="pDate">Drag across the chart</div>
+          <div class="chart" id="chart" role="img" aria-label="Line chart of cumulative sample profit and loss">
+            <svg class="reveal" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true">
+              <path class="line" id="line" d=""/>
+            </svg>
+            <div class="cursor" id="cursor"></div>
+            <div class="dot" id="dot"></div>
+          </div>
+          <div class="pfoot">
+            <div class="segmented" role="group" aria-label="Chart metric">
+              <button type="button" data-metric="pnl" aria-pressed="true">Realized P&amp;L</button>
+              <button type="button" data-metric="prem" aria-pressed="false">Premium</button>
+            </div>
+            <a href="dashboard.html">Open full dashboard</a>
+          </div>
         </div>
-        <div class="card">
-          <h3>Project three</h3>
-          <p>Add a short write-up of your thinking here. Case studies work well for product roles.</p>
-          <span class="tag">Tag</span><br>
-          <a href="#">Link &rarr;</a>
+      </div>
+    </div>
+
+    <section id="work">
+      <div class="wrap">
+        <h2>Work</h2>
+        <div class="work">
+          <article class="tile feature">
+            <span class="status">Live demo</span>
+            <h3>Options transaction dashboard</h3>
+            <p>Track premium collected, realized profit and loss, and win rate for a wheel-style options strategy. Filter by ticker, strategy, and status. The demo runs on sample data only.</p>
+            <div class="chips"><span class="chip filled">JavaScript</span><span class="chip filled">Chart.js</span><span class="chip filled">Data visualization</span></div>
+            <a class="link" href="dashboard.html">Open the demo</a>
+          </article>
+          <article class="tile half">
+            <span class="status wip">In progress</span>
+            <h3>Sidecar</h3>
+            <p>A companion for people who sell options. It tracks your positions, surfaces ideas worth a look, and shares facts and probabilities without telling you what to buy or sell.</p>
+            <div class="chips"><span class="chip">AI-native</span><span class="chip">Consumer</span></div>
+          </article>
+          <article class="tile half">
+            <span class="status soon">Next</span>
+            <h3>Your next project here</h3>
+            <p>Add a short case study: the problem, what you built, and what happened. Edit this tile in index.html.</p>
+            <div class="chips"><span class="chip">Tag</span><span class="chip">Tag</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>What I work on</h2>
+        <div class="skills">
+          <span class="chip filled">Search quality</span>
+          <span class="chip filled">Ranking</span>
+          <span class="chip filled">Personalization</span>
+          <span class="chip filled">Recommendations</span>
+          <span class="chip filled">AI-guided shopping</span>
+          <span class="chip">Product strategy</span>
+          <span class="chip">PRDs and roadmaps</span>
+          <span class="chip">Working with engineering and ML teams</span>
         </div>
       </div>
     </section>
 
     <section id="about">
-      <h2>About</h2>
-      <p>Write two or three sentences here: what you care about, how you work, and what you are looking for next.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        <a href="mailto:you@example.com">you@example.com</a> &middot;
-        <a href="https://www.linkedin.com/in/your-handle">LinkedIn</a> &middot;
-        <a href="https://github.com/your-username">GitHub</a>
-      </p>
+      <div class="wrap">
+        <div class="bento">
+          <div class="widget w-about">
+            <h3>About</h3>
+            <p>I lead product for search and recommendations, with a team covering search quality, ranking, personalization, and AI-guided shopping. I like turning fuzzy problems into clear plans that engineers and executives both want to build.</p>
+            <p>Outside work, I build small AI-powered tools to learn by shipping.</p>
+          </div>
+          <div class="widget w-now">
+            <h3>Right now</h3>
+            <ul>
+              <li>Polishing this portfolio</li>
+              <li>Building Sidecar</li>
+              <li>Exploring AI-native consumer apps</li>
+            </ul>
+          </div>
+          <div class="widget w-contact" id="contact">
+            <h3>Get in touch</h3>
+            <div class="contact-actions">
+              <a class="btn filled" href="https://linkedin.com/in/akashsmehta">LinkedIn</a>
+              <a class="btn tonal" href="https://github.com/jumpypipe">GitHub</a>
+              <a class="btn outlined" href="mailto:you@example.com">Email</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">&copy; 2026 Akash. Built with plain HTML, CSS, and JavaScript.</div>
   </footer>
+
+  <nav class="tabbar" aria-label="Quick navigation">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="dashboard.html">Dashboard</a>
+  </nav>
+
+  <script>
+    // Sample data only: cumulative values by closing date for 22 sample trades.
+    var dates = ["2026-01-23","2026-01-30","2026-02-06","2026-02-13","2026-02-20","2026-02-27","2026-03-06","2026-03-13","2026-03-20","2026-03-27","2026-04-03","2026-04-10","2026-04-17","2026-04-24","2026-05-01","2026-05-08","2026-05-22","2026-05-29","2026-06-05","2026-06-19","2026-06-26","2026-09-25"];
+    var series = {
+      pnl:  { label: "Realized P&L", data: [210,530,725,385,645,935,1085,1295,1635,1880,2020,1500,1805,1925,2155,2415,2610,2830,3030,3220,3425,3755] },
+      prem: { label: "Premium collected", data: [210,530,725,910,1170,1460,1610,1820,2160,2405,2545,2855,3160,3280,3510,3770,3965,4185,4385,4575,4780,5110] }
+    };
+    var metric = "pnl";
+    var W = 600, H = 200, PAD = 8;
+    var el = function (id) { return document.getElementById(id); };
+    var chart = el("chart"), line = el("line"), cursor = el("cursor"), dot = el("dot");
+    var money = function (n) { return "$" + n.toLocaleString("en-US"); };
+    var fmtDate = function (d) {
+      return new Date(d + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+    };
+    var styles = getComputedStyle(document.documentElement);
+
+    function pointAt(i) {
+      var d = series[metric].data;
+      var min = Math.min.apply(null, d), max = Math.max.apply(null, d);
+      var x = (i / (d.length - 1)) * W;
+      var y = H - PAD - ((d[i] - min) / (max - min || 1)) * (H - PAD * 2);
+      return { x: x, y: y };
+    }
+    function drawLine() {
+      var d = series[metric].data, path = "";
+      for (var i = 0; i < d.length; i++) {
+        var p = pointAt(i);
+        path += (i ? "L" : "M") + p.x.toFixed(1) + " " + p.y.toFixed(1);
+      }
+      line.setAttribute("d", path);
+      var color = styles.getPropertyValue("--green").trim();
+      line.style.stroke = color;
+      dot.style.background = color;
+      rest();
+    }
+    function rest() {
+      var d = series[metric].data;
+      el("pTitle").textContent = series[metric].label;
+      el("pValue").textContent = money(d[d.length - 1]);
+      el("pDelta").textContent = "Since January";
+      el("pDate").textContent = "Drag across the chart";
+    }
+    function scrub(clientX) {
+      var rect = chart.getBoundingClientRect();
+      var frac = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+      var d = series[metric].data;
+      var i = Math.round(frac * (d.length - 1));
+      var p = pointAt(i);
+      cursor.style.left = (p.x / W * 100) + "%";
+      dot.style.left = (p.x / W * 100) + "%";
+      dot.style.top = (p.y / H * 100) + "%";
+      el("pValue").textContent = money(d[i]);
+      el("pDelta").textContent = "+" + money(d[i]) + " so far";
+      el("pDate").textContent = fmtDate(dates[i]);
+    }
+    chart.addEventListener("pointerdown", function (e) { chart.classList.add("active"); scrub(e.clientX); });
+    chart.addEventListener("pointermove", function (e) {
+      if (e.pointerType === "mouse" || chart.classList.contains("active")) { chart.classList.add("active"); scrub(e.clientX); }
+    });
+    ["pointerleave", "pointerup", "pointercancel"].forEach(function (t) {
+      chart.addEventListener(t, function () { chart.classList.remove("active"); rest(); });
+    });
+    document.querySelectorAll(".segmented button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        metric = b.dataset.metric;
+        document.querySelectorAll(".segmented button").forEach(function (o) {
+          o.setAttribute("aria-pressed", String(o === b));
+        });
+        drawLine();
+      });
+    });
+    drawLine();
+  </script>
 </body>
 </html>
