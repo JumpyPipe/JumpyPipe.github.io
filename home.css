@@ -168,16 +168,84 @@ h2 { margin: 34px 0 16px; font-size: 1.2rem; letter-spacing: -.015em; }
 .tl p { margin: 0; max-width: 62ch; color: var(--muted); font-size: .95rem; }
 
 /* experience: company blocks, roles, bullets */
-.co { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 12px; }
+.co { display: flex; align-items: center; flex-wrap: wrap; gap: 2px 12px; }
 .co h3 { margin: 0; font-size: 1.15rem; }
 .tenure { color: var(--muted); font-size: .85rem; }
 .co-title { margin-top: 2px; color: var(--muted); font-size: .92rem; }
-.job { margin-top: 20px; }
-.job h4 { margin: 0; font-size: .98rem; font-weight: 650; line-height: 1.35; }
-.job .when { margin: 2px 0 9px; }
 .bul { margin: 0; padding-left: 18px; display: grid; gap: 8px; max-width: 68ch; color: var(--muted); font-size: .93rem; line-height: 1.55; }
 .bul li::marker { color: var(--accent); }
 .bul b.m { color: var(--text); font-weight: 700; }
+
+/* experience: career strip, badges, stat tiles, collapsible roles */
+.logo {
+  display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; flex: none;
+  font-style: normal; font-weight: 800; font-size: .95rem; letter-spacing: -.02em; color: #14202e;
+}
+.logo.w { background: var(--accent); color: var(--on-accent); }
+.logo.t { background: #5fcf9a; }
+.logo.a { background: #f6a85c; }
+.co .logo { margin-right: 2px; }
+.tl-head .xall {
+  margin-left: auto; height: 32px; padding: 0 14px; border: 0; border-radius: 10px; cursor: pointer;
+  background: var(--panel-2); color: var(--muted); font: inherit; font-size: .82rem; font-weight: 600; box-shadow: inset 0 0 0 1px var(--line);
+}
+.tl-head .xall:hover { color: var(--text); }
+
+.arc { margin: 0 0 30px; padding: 16px 18px 14px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--inset); }
+.arc-co, .arc-bar, .arc-years { position: relative; }
+.arc-co { height: 30px; }
+.arc-co span { position: absolute; top: 0; display: flex; align-items: center; gap: 7px; font-size: .8rem; font-weight: 700; color: var(--text); white-space: nowrap; }
+.arc-co .logo { width: 24px; height: 24px; border-radius: 7px; font-size: .72rem; }
+.arc-bar { height: 40px; }
+.seg {
+  position: absolute; top: 0; height: 100%; padding: 0; border: 0; border-right: 2px solid var(--panel-2); cursor: pointer;
+  background: var(--c); opacity: var(--o, 1); transition: transform .15s ease, opacity .15s ease;
+}
+.seg.w { --c: var(--accent); } .seg.t { --c: #5fcf9a; } .seg.a { --c: #f6a85c; }
+.seg:first-child { border-radius: 10px 0 0 10px; }
+.seg:last-child { border-radius: 0 10px 10px 0; border-right: 0; }
+.seg:hover, .seg:focus-visible { transform: scaleY(1.14); opacity: 1; z-index: 1; }
+.arc-years { height: 22px; margin-top: 6px; color: var(--muted); font-size: .72rem; font-weight: 600; }
+.arc-years span { position: absolute; top: 0; transform: translateX(-2px); }
+.arc-years .now { right: 0; transform: none; }
+.arc-cap { margin: 4px 0 0; min-height: 1.4em; color: var(--muted); font-size: .84rem; }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 10px; margin: 16px 0 4px; }
+.stat {
+  position: relative; padding: 12px 14px 12px 16px; background: var(--panel-2); border: 1px solid var(--line);
+  border-radius: 16px; box-shadow: var(--inset); overflow: hidden;
+}
+.stat::before { content: ""; position: absolute; left: 0; top: 12px; bottom: 12px; width: 3px; border-radius: 0 3px 3px 0; background: var(--c, var(--accent)); }
+li[data-co="a"] .stat { --c: #f6a85c; } li[data-co="t"] .stat { --c: #5fcf9a; }
+.stat .num { display: block; font-size: 1.55rem; font-weight: 750; letter-spacing: -.03em; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.stat .sl { display: block; margin-top: 2px; font-size: .82rem; font-weight: 600; }
+.stat small { display: block; margin-top: 1px; color: var(--muted); font-size: .74rem; line-height: 1.35; }
+
+.job { margin-top: 12px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel-2); box-shadow: var(--inset); }
+.job summary {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; align-items: center;
+  padding: 13px 16px; cursor: pointer; list-style: none; border-radius: 18px;
+}
+.job summary::-webkit-details-marker { display: none; }
+.job summary:hover h4 { color: var(--accent); }
+.job h4 { grid-column: 1; margin: 0; font-size: .98rem; font-weight: 650; line-height: 1.35; transition: color .15s; }
+.job .when { grid-column: 1; display: block; margin: 2px 0 0; color: var(--accent); font-size: .82rem; font-weight: 600; }
+.job .hl { grid-column: 1; display: block; margin-top: 4px; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+.job .more { grid-column: 2; grid-row: 1 / span 3; display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: .76rem; font-weight: 600; white-space: nowrap; }
+.job .chev { width: 20px; height: 20px; transition: transform .2s ease; }
+.job[open] .chev { transform: rotate(180deg); }
+.job[open] summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.job .bul { margin: 0; padding: 4px 18px 16px 38px; border-top: 1px solid var(--line); padding-top: 14px; }
+.job[open] .bul { animation: swap .22s ease-out; }
+.job.ping { animation: ping 1.1s ease-out; }
+@keyframes ping { 0%, 100% { box-shadow: var(--inset), 0 0 0 0 transparent; } 25% { box-shadow: var(--inset), 0 0 0 4px var(--tonal); } }
+@media (max-width: 560px) {
+  .job .cnt { display: none; }
+  .arc { padding: 14px 12px 12px; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .arc-years span:nth-child(5) { display: none; }
+}
 
 /* work: filter chips + project grid */
 .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: -6px 0 20px; }
@@ -271,5 +339,6 @@ h2 { margin: 34px 0 16px; font-size: 1.2rem; letter-spacing: -.015em; }
   html { scroll-behavior: auto; }
   .tab:not([hidden]) { animation: none; }
   .proj, .proj .thumb { transition: none; }
-  .rise, .tl > li.rise::before { animation: none; }
+  .rise, .tl > li.rise::before, .job.ping, .job[open] .bul { animation: none; }
+  .seg, .job .chev { transition: none; }
 }

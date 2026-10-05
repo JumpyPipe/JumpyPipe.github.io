@@ -13,7 +13,7 @@
     // Apply a saved theme choice before first paint, so there is no flash.
     try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="home.css?v=10">
+  <link rel="stylesheet" href="home.css?v=13">
 </head>
 <body>
   <div class="shell">
@@ -84,17 +84,43 @@
       <section class="tab" data-tab="experience" hidden>
         <h1 class="title">Experience</h1>
 
+<div class="arc rise" style="--i:0" aria-label="Career timeline, 2017 to now">
+          <div class="arc-co" aria-hidden="true">
+            <span style="left:0;width:35.6%"><i class="logo a">A</i>Amazon</span>
+            <span style="left:36.4%;width:9.3%"><i class="logo t">T</i></span>
+            <span style="left:45.8%;width:54.2%"><i class="logo w">W</i>Wayfair</span>
+          </div>
+          <div class="arc-bar" role="group" aria-label="Roles over time. Select one to jump to it.">
+            <button type="button" class="seg a" style="left:0;width:7.6%;--o:.5" data-go="bie" data-cap="Business Intelligence Engineer, Amazon &middot; Jan 2017 &ndash; Sep 2017" aria-label="Business Intelligence Engineer, Amazon"></button>
+            <button type="button" class="seg a" style="left:7.6%;width:14.4%;--o:.75" data-go="fire" data-cap="Product Manager Tech, Amazon &middot; Oct 2017 &ndash; Feb 2019" aria-label="Product Manager Tech, Amazon"></button>
+            <button type="button" class="seg a" style="left:22%;width:13.6%;--o:1" data-go="alexa" data-cap="Senior Product Manager Tech, Amazon &middot; Mar 2019 &ndash; Jun 2020" aria-label="Senior Product Manager Tech, Amazon"></button>
+            <button type="button" class="seg t" style="left:36.4%;width:9.3%;--o:1" data-go="tt" data-cap="Senior Product Manager, Thumbtack &middot; Aug 2020 &ndash; Jun 2021" aria-label="Senior Product Manager, Thumbtack"></button>
+            <button type="button" class="seg w" style="left:45.8%;width:18.6%;--o:.72" data-go="ppm" data-cap="Principal Product Manager, Wayfair &middot; Jun 2021 &ndash; Apr 2023" aria-label="Principal Product Manager, Wayfair"></button>
+            <button type="button" class="seg w" style="left:64.4%;width:35.6%;--o:1" data-go="gpm" data-cap="Group Product Manager, Wayfair &middot; May 2023 &ndash; Present" aria-label="Group Product Manager, Wayfair"></button>
+          </div>
+          <div class="arc-years" aria-hidden="true">
+            <span style="left:0">2017</span><span style="left:20.3%">2019</span><span style="left:40.7%">2021</span><span style="left:61%">2023</span><span style="left:81.4%">2025</span><span class="now">Now</span>
+          </div>
+          <p class="arc-cap" id="arcCap" aria-live="polite">Stronger color means a more senior role. Select a segment to jump to it.</p>
+        </div>
+
         <div class="tl-head rise" style="--i:0">
           <span class="ico"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
           <h2>Roles</h2>
+          <button type="button" class="xall" id="xall">Expand all</button>
         </div>
 <ol class="tl">
-          <li class="rise" style="--i:1">
-            <div class="co"><h3>Wayfair</h3><span class="tenure">5 years 4 months</span></div>
+          <li data-co="w" class="rise" style="--i:1">
+            <div class="co"><span class="logo w" aria-hidden="true">W</span><h3>Wayfair</h3><span class="tenure">5 years 4 months</span></div>
             <div class="co-title">Associate Director, Product Management</div>
-            <div class="job">
-              <h4>Group Product Manager – Search &amp; Personalization</h4>
-              <span class="when">May 2023 – Present</span>
+            <div class="stats"><div class="stat"><b class="num" data-to="72" data-pre="$" data-suf="M">$72M</b><span class="sl">incremental profit</span><small>Personalization foundation</small></div><div class="stat"><b class="num" data-to="48" data-pre="$" data-suf="M">$48M</b><span class="sl">incremental revenue</span><small>Dynamic Page Construction</small></div><div class="stat"><b class="num" data-to="94" data-pre="&minus;" data-suf="%">&minus;94%</b><span class="sl">diagnosis time</span><small>Ask Search</small></div><div class="stat"><b class="num" data-to="7" data-pre="" data-suf="">7</b><span class="sl">PMs led</span><small>Search &amp; Personalization</small></div></div>
+            <details class="job" data-job="gpm">
+              <summary>
+                <h4>Group Product Manager – Search &amp; Personalization</h4>
+                <span class="when">May 2023 – Present</span>
+                <span class="hl">Ranking strategy, agentic search, and a team of seven PMs</span>
+                <span class="more"><span class="cnt">8 highlights</span><svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
               <ul class="bul">
               <li>Defined ranking strategy across query relevance, real-time intent, long-term customer preferences, product intelligence, and profit objectives, balancing customer relevance with business value.</li>
               <li>Drove new-SKU exploration in ranking, balancing near-term conversion with discovery of new products and collection of customer-response signals to inform future ranking decisions.</li>
@@ -105,34 +131,48 @@
               <li>Created Ask Search, a diagnosis and resolution-recommendation bot using n8n workflows, Gemini, and MCP servers; automated triage of reported search issues, reducing diagnosis time by <b class="m">94%</b>, from weeks to hours.</li>
               <li>Led and coached seven product managers across Search and Personalization; aligned Engineering, Data Science, Design, Analytics, and executives on portfolio priorities, dependencies, and investment tradeoffs.</li>
               </ul>
-            </div>
-            <div class="job">
-              <h4>Principal Product Manager – Personalization</h4>
-              <span class="when">Jun 2021 – Apr 2023</span>
+            </details>
+            <details class="job" data-job="ppm">
+              <summary>
+                <h4>Principal Product Manager – Personalization</h4>
+                <span class="when">Jun 2021 – Apr 2023</span>
+                <span class="hl">AI-driven personalization behind $48M revenue and $72M profit</span>
+                <span class="more"><span class="cnt">4 highlights</span><svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
               <ul class="bul">
               <li>Architected Dynamic Page Construction, an AI decisioning system combining eligibility, sequencing, personalized ranking, layout selection, and presentation logic to dynamically assemble the most relevant experience for each customer and context, driving <b class="m">$48M</b> in incremental revenue.</li>
               <li>Established Wayfair’s foundational customer understanding and personalization system, combining long-term preferences, real-time session intent, contextual signals, and cold-start representations to power recommendations across recognized and unrecognized customers, delivering <b class="m">$72M</b> in incremental profit.</li>
               <li>Created an AI-powered customer intelligence layer that transformed behavioral and contextual signals into reusable interests, affinities, and customer representations for recommendations, content ranking, lifecycle messaging, and experience personalization.</li>
               <li>Extended personalized decisioning across the customer journey and into owned-channel marketing, using customer context to determine which products and content to surface and increasing traffic driven back to Wayfair by <b class="m">10%</b>.</li>
               </ul>
-            </div>
+            </details>
           </li>
-          <li class="rise" style="--i:2">
-            <div class="co"><h3>Thumbtack</h3><span class="tenure">10 months</span></div>
-            <div class="job">
-              <h4>Senior Product Manager – Find &amp; Discovery</h4>
-              <span class="when">Aug 2020 – Jun 2021</span>
+          <li data-co="t" class="rise" style="--i:2">
+            <div class="co"><span class="logo t" aria-hidden="true">T</span><h3>Thumbtack</h3><span class="tenure">10 months</span></div>
+            <div class="stats"><div class="stat"><b class="num" data-to="20" data-pre="$" data-suf="M">$20M</b><span class="sl">annualized revenue</span><small>Visual discovery</small></div></div>
+            <details class="job" data-job="tt">
+              <summary>
+                <h4>Senior Product Manager – Find &amp; Discovery</h4>
+                <span class="when">Aug 2020 – Jun 2021</span>
+                <span class="hl">Visual discovery redesign with $20M annualized impact</span>
+                <span class="more"><span class="cnt">2 highlights</span><svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
               <ul class="bul">
               <li>Owned product strategy for core search and discovery experiences across search results, provider profiles, and detailed page discovery.</li>
               <li>Led improvements to visual discovery, including redesigned featured images and review discovery, driving <b class="m">$20M</b> in annualized revenue impact.</li>
               </ul>
-            </div>
+            </details>
           </li>
-          <li class="rise" style="--i:3">
-            <div class="co"><h3>Amazon</h3><span class="tenure">3 years 4 months</span></div>
-            <div class="job">
-              <h4>Senior Product Manager Tech – Alexa Devices</h4>
-              <span class="when">Mar 2019 – Jun 2020</span>
+          <li data-co="a" class="rise" style="--i:3">
+            <div class="co"><span class="logo a" aria-hidden="true">A</span><h3>Amazon</h3><span class="tenure">3 years 4 months</span></div>
+            <div class="stats"><div class="stat"><b class="num" data-to="75" data-pre="$" data-suf="M">$75M</b><span class="sl">annualized revenue</span><small>ForYou feed</small></div><div class="stat"><b class="num" data-to="40" data-pre="$" data-suf="M">$40M</b><span class="sl">annualized revenue</span><small>Home screen redesign</small></div><div class="stat"><b class="num" data-to="32" data-pre="$" data-suf="M">$32M</b><span class="sl">annualized revenue</span><small>Out-of-box flow</small></div></div>
+            <details class="job" data-job="alexa">
+              <summary>
+                <h4>Senior Product Manager Tech – Alexa Devices</h4>
+                <span class="when">Mar 2019 – Jun 2020</span>
+                <span class="hl">Zero-to-one Visual ID and household-aware experiences on Echo Show</span>
+                <span class="more"><span class="cnt">5 highlights</span><svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
               <ul class="bul">
               <li>Led zero-to-one product development for Visual ID and household-aware personalization on Echo Show devices, connecting camera-based user recognition to experiences that adapted to who was present.</li>
               <li>Collaborated with machine learning science to facilitate data collection through model training and customer experience definition, partnering with science and engineering to translate visual recognition into device behavior.</li>
@@ -140,25 +180,33 @@
               <li>Developed automatic kids-mode detection and multi-user privacy experiences, defining how personalization should change when children or multiple household members were in the room.</li>
               <li>Designed an Alexa-wide interaction telemetry strategy for 1st, 2nd, and 3rd party smart displays to measure customer engagement across device experiences.</li>
               </ul>
-            </div>
-            <div class="job">
-              <h4>Product Manager Tech – Fire Tablet</h4>
-              <span class="when">Oct 2017 – Feb 2019</span>
+            </details>
+            <details class="job" data-job="fire">
+              <summary>
+                <h4>Product Manager Tech – Fire Tablet</h4>
+                <span class="when">Oct 2017 – Feb 2019</span>
+                <span class="hl">ForYou feed, out-of-box flow, and home screen redesign</span>
+                <span class="more"><span class="cnt">3 highlights</span><svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
               <ul class="bul">
               <li>Created a Tablet Homescreen discovery ‘ForYou’ feed to drive engagement and <b class="m">$75M</b> in annualized revenue.</li>
               <li>Optimized the Out-of-Box-Experience (OOBE) CX flow to add an incremental <b class="m">$32M</b> in annualized revenue.</li>
               <li>Led the redesign and consolidation of Fire Tablet Home Screen to add <b class="m">+$40M</b> in annualized revenue.</li>
               </ul>
-            </div>
-            <div class="job">
-              <h4>Business Intelligence Engineer – Fire Tablet</h4>
-              <span class="when">Jan 2017 – Sep 2017</span>
+            </details>
+            <details class="job" data-job="bie">
+              <summary>
+                <h4>Business Intelligence Engineer – Fire Tablet</h4>
+                <span class="when">Jan 2017 – Sep 2017</span>
+                <span class="hl">North-star metrics and a Redshift and Tableau analytics platform</span>
+                <span class="more"><span class="cnt">3 highlights</span><svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
               <ul class="bul">
               <li>Developed north-star metrics to drive early engagement, longer-term retention, and churn detection.</li>
               <li>Created a data analytics platform using AWS Redshift, S3, and Tableau to service Amazon Devices Marketing Org.</li>
               <li>Generated automated targeting for on-device and email communications to lift CTRs by <b class="m">~92%</b>.</li>
               </ul>
-            </div>
+            </details>
           </li>
         </ol>
 
@@ -279,6 +327,7 @@
         if (a.dataset.nav === h) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
       });
       document.title = titles[h] + " | Akash";
+      if (h === "experience") countUp();
       window.scrollTo(0, 0);
     }
 
@@ -347,6 +396,51 @@
     });
     if (mq.addEventListener) mq.addEventListener("change", paintBtn);
     paintBtn();
+
+
+    // Experience: career strip, expand all, count-up
+    var ARC_DEFAULT = "Stronger color means a more senior role. Select a segment to jump to it.";
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var arcCap = document.getElementById("arcCap");
+    document.querySelectorAll(".seg").forEach(function (s) {
+      var show = function () { arcCap.textContent = s.dataset.cap; };
+      var hide = function () { arcCap.textContent = ARC_DEFAULT; };
+      s.addEventListener("mouseenter", show); s.addEventListener("focus", show);
+      s.addEventListener("mouseleave", hide); s.addEventListener("blur", hide);
+      s.addEventListener("click", function () {
+        var d = document.querySelector('.job[data-job="' + s.dataset.go + '"]');
+        if (!d) return;
+        d.open = true;
+        d.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+        d.classList.remove("ping"); void d.offsetWidth; d.classList.add("ping");
+      });
+    });
+    var jobs = document.querySelectorAll(".job"), xall = document.getElementById("xall");
+    function paintX() {
+      var allOpen = Array.prototype.every.call(jobs, function (d) { return d.open; });
+      xall.textContent = allOpen ? "Collapse all" : "Expand all";
+    }
+    xall.addEventListener("click", function () {
+      var allOpen = Array.prototype.every.call(jobs, function (d) { return d.open; });
+      jobs.forEach(function (d) { d.open = !allOpen; });
+      paintX();
+    });
+    jobs.forEach(function (d) { d.addEventListener("toggle", paintX); });
+    function countUp() {
+      var nums = document.querySelectorAll(".num");
+      if (reduce) return;
+      nums.forEach(function (n) { n.textContent = n.dataset.pre.replace("&minus;", "\u2212") + "0" + n.dataset.suf; });
+      setTimeout(function () {
+        var t0 = null;
+        function frame(t) {
+          if (t0 === null) t0 = t;
+          var p = Math.min(1, (t - t0) / 650), e = 1 - Math.pow(1 - p, 3);
+          nums.forEach(function (n) { n.textContent = n.dataset.pre.replace("&minus;", "\u2212") + Math.round(+n.dataset.to * e) + n.dataset.suf; });
+          if (p < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }, 260);
+    }
 
     window.addEventListener("hashchange", route);
     renderWork();
