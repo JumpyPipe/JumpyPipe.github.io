@@ -116,7 +116,7 @@ svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-widt
 }
 .txt { min-width: 0; display: grid; }
 .txt small { color: var(--muted); font-size: .78rem; line-height: 1.3; }
-.val { font-size: .92rem; overflow-wrap: anywhere; transition: color .15s; }
+.val { font-size: .84rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: color .15s; }
 
 /* main panel */
 .panel {
