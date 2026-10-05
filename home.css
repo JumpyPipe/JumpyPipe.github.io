@@ -184,6 +184,8 @@ h2 { margin: 34px 0 16px; font-size: 1.2rem; letter-spacing: -.015em; }
 .logo.w { background: var(--accent); color: var(--on-accent); }
 .logo.t { background: #5fcf9a; }
 .logo.a { background: #f6a85c; }
+.logo.b { background: #ef7b73; }
+.logo.o { background: #a393f6; }
 .co .logo { margin-right: 2px; }
 .tl-head .xall {
   margin-left: auto; height: 32px; padding: 0 14px; border: 0; border-radius: 10px; cursor: pointer;
@@ -201,7 +203,7 @@ h2 { margin: 34px 0 16px; font-size: 1.2rem; letter-spacing: -.015em; }
   position: absolute; top: 0; height: 100%; padding: 0; border: 0; border-right: 2px solid var(--panel-2); cursor: pointer;
   background: var(--c); opacity: var(--o, 1); transition: transform .15s ease, opacity .15s ease;
 }
-.seg.w { --c: var(--accent); } .seg.t { --c: #5fcf9a; } .seg.a { --c: #f6a85c; }
+.seg.w { --c: var(--accent); } .seg.t { --c: #5fcf9a; } .seg.a { --c: #f6a85c; } .seg.b { --c: #ef7b73; } .seg.o { --c: #a393f6; }
 .seg:first-child { border-radius: 10px 0 0 10px; }
 .seg:last-child { border-radius: 0 10px 10px 0; border-right: 0; }
 .seg:hover, .seg:focus-visible { transform: scaleY(1.14); opacity: 1; z-index: 1; }
@@ -216,7 +218,7 @@ h2 { margin: 34px 0 16px; font-size: 1.2rem; letter-spacing: -.015em; }
   border-radius: 16px; box-shadow: var(--inset); overflow: hidden;
 }
 .stat::before { content: ""; position: absolute; left: 0; top: 12px; bottom: 12px; width: 3px; border-radius: 0 3px 3px 0; background: var(--c, var(--accent)); }
-li[data-co="a"] .stat { --c: #f6a85c; } li[data-co="t"] .stat { --c: #5fcf9a; }
+li[data-co="a"] .stat { --c: #f6a85c; } li[data-co="t"] .stat { --c: #5fcf9a; } li[data-co="b"] .stat { --c: #ef7b73; } li[data-co="o"] .stat { --c: #a393f6; }
 .stat .num { display: block; font-size: 1.55rem; font-weight: 750; letter-spacing: -.03em; line-height: 1.15; font-variant-numeric: tabular-nums; }
 .stat .sl { display: block; margin-top: 2px; font-size: .82rem; font-weight: 600; }
 .stat small { display: block; margin-top: 1px; color: var(--muted); font-size: .74rem; line-height: 1.35; }
@@ -244,7 +246,8 @@ li[data-co="a"] .stat { --c: #f6a85c; } li[data-co="t"] .stat { --c: #5fcf9a; }
   .arc { padding: 14px 12px 12px; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stat:last-child:nth-child(odd) { grid-column: 1 / -1; }
-  .arc-years span:nth-child(5) { display: none; }
+  .arc-co span { font-size: 0; gap: 0; }
+  .arc-co .logo { width: 18px; height: 18px; border-radius: 6px; font-size: .62rem; }
 }
 
 /* work: filter chips + project grid */

@@ -13,7 +13,7 @@
     // Apply a saved theme choice before first paint, so there is no flash.
     try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="home.css?v=13">
+  <link rel="stylesheet" href="home.css?v=14">
 </head>
 <body>
   <div class="shell">
@@ -84,22 +84,26 @@
       <section class="tab" data-tab="experience" hidden>
         <h1 class="title">Experience</h1>
 
-<div class="arc rise" style="--i:0" aria-label="Career timeline, 2017 to now">
+<div class="arc rise" style="--i:0" aria-label="Career timeline, 2012 to now">
           <div class="arc-co" aria-hidden="true">
-            <span style="left:0;width:35.6%"><i class="logo a">A</i>Amazon</span>
-            <span style="left:36.4%;width:9.3%"><i class="logo t">T</i></span>
-            <span style="left:45.8%;width:54.2%"><i class="logo w">W</i>Wayfair</span>
+            <span style="left:0.00%;width:12.92%"><i class="logo o">O</i>OpenCell</span>
+            <span style="left:16.85%;width:16.85%"><i class="logo b">B</i>BofA</span>
+            <span style="left:33.71%;width:23.60%"><i class="logo a">A</i>Amazon</span>
+            <span style="left:57.87%;"><i class="logo t">T</i></span>
+            <span style="left:64.04%;width:35.96%"><i class="logo w">W</i>Wayfair</span>
           </div>
           <div class="arc-bar" role="group" aria-label="Roles over time. Select one to jump to it.">
-            <button type="button" class="seg a" style="left:0;width:7.6%;--o:.5" data-go="bie" data-cap="Business Intelligence Engineer, Amazon &middot; Jan 2017 &ndash; Sep 2017" aria-label="Business Intelligence Engineer, Amazon"></button>
-            <button type="button" class="seg a" style="left:7.6%;width:14.4%;--o:.75" data-go="fire" data-cap="Product Manager Tech, Amazon &middot; Oct 2017 &ndash; Feb 2019" aria-label="Product Manager Tech, Amazon"></button>
-            <button type="button" class="seg a" style="left:22%;width:13.6%;--o:1" data-go="alexa" data-cap="Senior Product Manager Tech, Amazon &middot; Mar 2019 &ndash; Jun 2020" aria-label="Senior Product Manager Tech, Amazon"></button>
-            <button type="button" class="seg t" style="left:36.4%;width:9.3%;--o:1" data-go="tt" data-cap="Senior Product Manager, Thumbtack &middot; Aug 2020 &ndash; Jun 2021" aria-label="Senior Product Manager, Thumbtack"></button>
-            <button type="button" class="seg w" style="left:45.8%;width:18.6%;--o:.72" data-go="ppm" data-cap="Principal Product Manager, Wayfair &middot; Jun 2021 &ndash; Apr 2023" aria-label="Principal Product Manager, Wayfair"></button>
-            <button type="button" class="seg w" style="left:64.4%;width:35.6%;--o:1" data-go="gpm" data-cap="Group Product Manager, Wayfair &middot; May 2023 &ndash; Present" aria-label="Group Product Manager, Wayfair"></button>
+            <button type="button" class="seg o" style="left:0.00%;width:12.92%;--o:1" data-go="opencell" data-cap="Product Manager, OpenCell Technologies &middot; Jan 2012 &ndash; Nov 2013" aria-label="Product Manager, OpenCell Technologies"></button>
+            <button type="button" class="seg b" style="left:16.85%;width:16.85%;--o:1" data-go="bofa" data-cap="Product Manager, Bank of America &middot; Jul 2014 &ndash; Dec 2016" aria-label="Product Manager, Bank of America"></button>
+            <button type="button" class="seg a" style="left:33.71%;width:5.06%;--o:0.5" data-go="bie" data-cap="Business Intelligence Engineer, Amazon &middot; Jan 2017 &ndash; Sep 2017" aria-label="Business Intelligence Engineer, Amazon"></button>
+            <button type="button" class="seg a" style="left:38.76%;width:9.55%;--o:0.75" data-go="fire" data-cap="Product Manager Tech, Amazon &middot; Oct 2017 &ndash; Feb 2019" aria-label="Product Manager Tech, Amazon"></button>
+            <button type="button" class="seg a" style="left:48.31%;width:8.99%;--o:1" data-go="alexa" data-cap="Senior Product Manager Tech, Amazon &middot; Mar 2019 &ndash; Jun 2020" aria-label="Senior Product Manager Tech, Amazon"></button>
+            <button type="button" class="seg t" style="left:57.87%;width:6.18%;--o:1" data-go="tt" data-cap="Senior Product Manager, Thumbtack &middot; Aug 2020 &ndash; Jun 2021" aria-label="Senior Product Manager, Thumbtack"></button>
+            <button type="button" class="seg w" style="left:64.04%;width:12.36%;--o:0.72" data-go="ppm" data-cap="Principal Product Manager, Wayfair &middot; Jun 2021 &ndash; Apr 2023" aria-label="Principal Product Manager, Wayfair"></button>
+            <button type="button" class="seg w" style="left:76.40%;width:23.60%;--o:1" data-go="gpm" data-cap="Group Product Manager, Wayfair &middot; May 2023 &ndash; Present" aria-label="Group Product Manager, Wayfair"></button>
           </div>
           <div class="arc-years" aria-hidden="true">
-            <span style="left:0">2017</span><span style="left:20.3%">2019</span><span style="left:40.7%">2021</span><span style="left:61%">2023</span><span style="left:81.4%">2025</span><span class="now">Now</span>
+            <span style="left:0.00%">2012</span><span style="left:20.22%">2015</span><span style="left:40.45%">2018</span><span style="left:60.67%">2021</span><span style="left:80.90%">2024</span><span class="now">Now</span>
           </div>
           <p class="arc-cap" id="arcCap" aria-live="polite">Stronger color means a more senior role. Select a segment to jump to it.</p>
         </div>
@@ -208,19 +212,50 @@
               </ul>
             </details>
           </li>
+                  <li data-co="b" class="rise" style="--i:4">
+            <div class="co"><span class="logo b" aria-hidden="true">B</span><h3>Bank of America</h3><span class="tenure">2 years 7 months</span></div>
+            <div class="stats"><div class="stat"><b class="num" data-to="400" data-pre="" data-suf="">400</b><span class="sl">user stories</span><small>Business continuity systems</small></div><div class="stat"><b class="num" data-to="1.7" data-pre="$" data-suf="M" data-dec="1">$1.7M</b><span class="sl">internal product</span><small>Global Business Continuity &amp; Recovery</small></div></div>
+            <details class="job" data-job="bofa">
+              <summary>
+                <h4>Product Manager – Global Business Continuity &amp; Recovery</h4>
+                <span class="when">Jul 2014 – Dec 2016</span>
+                <span class="hl">Roadmap, requirements, and 400 user stories for a $1.7M internal product</span>
+                <span class="more"><span class="cnt">1 highlight</span><svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
+              <ul class="bul">
+              <li>Owned product roadmap, requirements, metrics reporting, and visual analytics for global business continuity systems, including <b class="m">400</b> user stories for a <b class="m">$1.7M</b> internal product.</li>
+              </ul>
+            </details>
+          </li>
+          <li data-co="o" class="rise" style="--i:5">
+            <div class="co"><span class="logo o" aria-hidden="true">O</span><h3>OpenCell Technologies</h3><span class="tenure">1 year 11 months</span></div>
+            <div class="stats"><div class="stat"><b class="num" data-to="1.2" data-pre="$" data-suf="M" data-dec="1">$1.2M</b><span class="sl">non-dilutive funding</span><small>Small Business Innovation Research</small></div><div class="stat"><b class="num" data-to="900" data-pre="$" data-suf="K">$900K</b><span class="sl">non-dilutive funding</span><small>Massachusetts Institute of Technology</small></div></div>
+            <details class="job" data-job="opencell">
+              <summary>
+                <h4>Product Manager – Efficient, high-throughput, and scalable transfection tools</h4>
+                <span class="when">Jan 2012 – Nov 2013</span>
+                <span class="hl">Led STEAM product development and supported non-dilutive funding outcomes</span>
+                <span class="more"><span class="cnt">2 highlights</span><svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
+              <ul class="bul">
+              <li>Led product development for STEAM, a high-throughput transaction processing system used to support commercialization and fundraising efforts.</li>
+              <li>Supported successful non-dilutive funding outcomes, including <b class="m">$1.2M</b> from the Small Business Innovation Research program and <b class="m">$900K</b> from the Massachusetts Institute of Technology.</li>
+              </ul>
+            </details>
+          </li>
         </ol>
 
-        <div class="tl-head rise" style="margin-top:34px; --i:4">
+        <div class="tl-head rise" style="margin-top:34px; --i:6">
           <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
           <h2>Education</h2>
         </div>
         <ol class="tl">
-          <li class="rise" style="--i:5">
+          <li class="rise" style="--i:7">
             <h3>Northwestern University</h3>
             <span class="when">2016</span>
             <p>M.S. Predictive Analytics</p>
           </li>
-          <li class="rise" style="--i:6">
+          <li class="rise" style="--i:8">
             <h3>Georgia Institute of Technology</h3>
             <span class="when">2011</span>
             <p>B.S. Biomedical Engineering</p>
@@ -429,13 +464,13 @@
     function countUp() {
       var nums = document.querySelectorAll(".num");
       if (reduce) return;
-      nums.forEach(function (n) { n.textContent = n.dataset.pre.replace("&minus;", "\u2212") + "0" + n.dataset.suf; });
+      nums.forEach(function (n) { n.textContent = n.dataset.pre + (0).toFixed(+n.dataset.dec || 0) + n.dataset.suf; });
       setTimeout(function () {
         var t0 = null;
         function frame(t) {
           if (t0 === null) t0 = t;
           var p = Math.min(1, (t - t0) / 650), e = 1 - Math.pow(1 - p, 3);
-          nums.forEach(function (n) { n.textContent = n.dataset.pre.replace("&minus;", "\u2212") + Math.round(+n.dataset.to * e) + n.dataset.suf; });
+          nums.forEach(function (n) { var dec = +n.dataset.dec || 0; n.textContent = n.dataset.pre + (+n.dataset.to * e).toFixed(dec) + n.dataset.suf; });
           if (p < 1) requestAnimationFrame(frame);
         }
         requestAnimationFrame(frame);
