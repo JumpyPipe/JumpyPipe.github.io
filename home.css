@@ -255,6 +255,15 @@ h2 { margin: 34px 0 16px; font-size: 1.2rem; letter-spacing: -.015em; }
 }
 .stat::before { content: ""; position: absolute; left: 0; top: 12px; bottom: 12px; width: 3px; border-radius: 0 3px 3px 0; background: var(--c, var(--accent)); }
 li[data-co="a"] .stat { --c: #f6a85c; } li[data-co="t"] .stat { --c: #5fcf9a; } li[data-co="b"] .stat { --c: #ef7b73; } li[data-co="o"] .stat { --c: #a393f6; }
+.stat::before { z-index: 2; box-shadow: 0 0 14px 1px var(--c, var(--accent)); }
+.stat::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .22;
+  background: linear-gradient(90deg, var(--c, var(--accent)) 0%, transparent 78%);
+}
+.stat > * { position: relative; z-index: 1; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .stat::after { opacity: .15; } :root:not([data-theme="dark"]) .stat::before { box-shadow: none; } }
+:root[data-theme="light"] .stat::after { opacity: .15; }
+:root[data-theme="light"] .stat::before { box-shadow: none; }
 .stat .num { display: block; font-size: 1.55rem; font-weight: 750; letter-spacing: -.03em; line-height: 1.15; font-variant-numeric: tabular-nums; }
 .stat .sl { display: block; margin-top: 2px; font-size: .82rem; font-weight: 600; }
 .stat small { display: block; margin-top: 1px; color: var(--muted); font-size: .74rem; line-height: 1.35; }
