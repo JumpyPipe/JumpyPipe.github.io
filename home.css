@@ -122,15 +122,27 @@ h2 { margin: 34px 0 16px; font-size: 1.2rem; letter-spacing: -.015em; }
 .tl-head { display: flex; align-items: center; gap: 12px; margin: 0 0 20px; }
 .tl-head .ico { width: 38px; height: 38px; }
 .tl-head h2 { margin: 0; }
-.tl { list-style: none; margin: 0 0 14px 19px; padding: 0 0 0 28px; border-left: 2px solid var(--line); display: grid; gap: 26px; }
-.tl li { position: relative; }
-.tl li::before {
+.tl { grid-template-columns: minmax(0, 1fr); list-style: none; margin: 0 0 14px 19px; padding: 0 0 0 28px; border-left: 2px solid var(--line); display: grid; gap: 26px; }
+.tl > li { position: relative; }
+.tl > li::before {
   content: ""; position: absolute; left: -35px; top: 7px; width: 12px; height: 12px; border-radius: 50%;
   background: var(--accent); box-shadow: 0 0 0 4px var(--panel);
 }
 .tl h3 { margin: 0; font-size: 1.02rem; }
 .tl .when { display: block; margin: 2px 0 6px; color: var(--accent); font-size: .86rem; font-weight: 600; }
 .tl p { margin: 0; max-width: 62ch; color: var(--muted); font-size: .95rem; }
+
+/* experience: company blocks, roles, bullets */
+.co { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 12px; }
+.co h3 { margin: 0; font-size: 1.15rem; }
+.tenure { color: var(--muted); font-size: .85rem; }
+.co-title { margin-top: 2px; color: var(--muted); font-size: .92rem; }
+.job { margin-top: 20px; }
+.job h4 { margin: 0; font-size: .98rem; font-weight: 650; line-height: 1.35; }
+.job .when { margin: 2px 0 9px; }
+.bul { margin: 0; padding-left: 18px; display: grid; gap: 8px; max-width: 68ch; color: var(--muted); font-size: .93rem; line-height: 1.55; }
+.bul li::marker { color: var(--accent); }
+.bul b.m { color: var(--text); font-weight: 700; }
 
 /* work: filter chips + project grid */
 .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: -6px 0 20px; }
@@ -161,7 +173,7 @@ h2 { margin: 34px 0 16px; font-size: 1.2rem; letter-spacing: -.015em; }
 /* experience: entries rise into place, one after another (replays each time the tab opens) */
 .tab[data-tab="experience"]:not([hidden]) { animation: none; }
 .rise { animation: rise .42s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(var(--i, 0) * 55ms); }
-.tl li.rise::before { animation: pop .38s cubic-bezier(.3, 1.4, .5, 1) both; animation-delay: calc(var(--i, 0) * 55ms + 140ms); }
+.tl > li.rise::before { animation: pop .38s cubic-bezier(.3, 1.4, .5, 1) both; animation-delay: calc(var(--i, 0) * 55ms + 140ms); }
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
 @keyframes pop { from { transform: scale(.3); opacity: 0; } }
 
@@ -182,7 +194,8 @@ h2 { margin: 34px 0 16px; font-size: 1.2rem; letter-spacing: -.015em; }
 /* bottom tab bar (phones and small tablets) */
 .tabbar { display: none; }
 @media (max-width: 940px) {
-  .shell { grid-template-columns: 1fr; padding-bottom: 110px; }
+  .shell { grid-template-columns: minmax(0, 1fr); padding-bottom: 110px; }
+  .side, .panel { min-width: 0; }
   .side {
     position: static; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 4px 16px; padding: 18px;
   }
@@ -208,5 +221,5 @@ h2 { margin: 34px 0 16px; font-size: 1.2rem; letter-spacing: -.015em; }
   html { scroll-behavior: auto; }
   .tab:not([hidden]) { animation: none; }
   .proj, .proj .thumb { transition: none; }
-  .rise, .tl li.rise::before { animation: none; }
+  .rise, .tl > li.rise::before { animation: none; }
 }
