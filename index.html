@@ -13,7 +13,7 @@
     // Apply a saved theme choice before first paint, so there is no flash.
     try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="home.css?v=25">
+  <link rel="stylesheet" href="home.css?v=26">
 </head>
 <body>
   <div class="shell">
@@ -385,51 +385,6 @@
     <a href="#contact" data-nav="contact">Contact</a>
   </nav>
 
-  <template id="snugArt">
-    <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <defs>
-        <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#000" flood-opacity=".22"/></filter>
-      </defs>
-      <circle cx="70" cy="40" r="60" fill="var(--accent)" opacity=".10"/>
-      <circle cx="350" cy="170" r="70" fill="#f6a85c" opacity=".12"/>
-      <!-- floating cards -->
-      <g filter="url(#sh)">
-        <rect x="34" y="42" width="128" height="46" rx="12" fill="var(--panel)" stroke="var(--line)"/>
-        <circle cx="54" cy="65" r="7" fill="#8b8cf5"/>
-        <rect x="68" y="55" width="62" height="7" rx="3.5" fill="var(--text)" opacity=".85"/>
-        <rect x="68" y="69" width="44" height="6" rx="3" fill="var(--muted)" opacity=".7"/>
-        <rect x="46" y="112" width="116" height="44" rx="12" fill="var(--panel)" stroke="var(--line)"/>
-        <circle cx="64" cy="134" r="7" fill="#f6a85c"/>
-        <rect x="78" y="124" width="56" height="7" rx="3.5" fill="var(--text)" opacity=".85"/>
-        <rect x="78" y="138" width="38" height="6" rx="3" fill="var(--muted)" opacity=".7"/>
-      </g>
-      <!-- phone -->
-      <g filter="url(#sh)">
-        <rect x="190" y="14" width="112" height="196" rx="20" fill="var(--phone)" stroke="var(--phone-edge)" stroke-width="2"/>
-        <rect x="228" y="21" width="36" height="6" rx="3" fill="var(--phone-edge)"/>
-        <text x="204" y="50" font-size="12" font-weight="700" fill="var(--text)" font-family="-apple-system, system-ui, sans-serif">Snug</text>
-        <g>
-          <rect x="203" y="60" width="86" height="24" rx="8" fill="var(--panel-2)"/>
-          <circle cx="215" cy="72" r="5" fill="#f6a85c"/><rect x="226" y="68" width="38" height="5" rx="2.5" fill="var(--text)" opacity=".8"/><rect x="226" y="76" width="24" height="4" rx="2" fill="var(--muted)" opacity=".7"/>
-          <rect x="203" y="90" width="86" height="24" rx="8" fill="var(--panel-2)"/>
-          <circle cx="215" cy="102" r="5" fill="#8b8cf5"/><rect x="226" y="98" width="44" height="5" rx="2.5" fill="var(--text)" opacity=".8"/><rect x="226" y="106" width="28" height="4" rx="2" fill="var(--muted)" opacity=".7"/>
-          <rect x="203" y="120" width="86" height="24" rx="8" fill="var(--panel-2)"/>
-          <circle cx="215" cy="132" r="5" fill="#5fcf9a"/><rect x="226" y="128" width="34" height="5" rx="2.5" fill="var(--text)" opacity=".8"/><rect x="226" y="136" width="22" height="4" rx="2" fill="var(--muted)" opacity=".7"/>
-        </g>
-        <rect x="203" y="154" width="86" height="40" rx="10" fill="var(--tonal)"/>
-        <path d="M216 166l2.2 4.8 4.8 2.2-4.8 2.2-2.2 4.8-2.2-4.8-4.8-2.2 4.8-2.2z" fill="var(--accent)"/>
-        <rect x="230" y="165" width="50" height="5" rx="2.5" fill="var(--on-tonal)" opacity=".85"/>
-        <rect x="230" y="175" width="38" height="5" rx="2.5" fill="var(--on-tonal)" opacity=".55"/>
-      </g>
-      <!-- right chip -->
-      <g filter="url(#sh)">
-        <rect x="318" y="76" width="56" height="40" rx="12" fill="var(--panel)" stroke="var(--line)"/>
-        <path d="M334 90l2 4.4 4.4 2-4.4 2-2 4.4-2-4.4-4.4-2 4.4-2z" fill="var(--accent)"/>
-        <rect x="344" y="92" width="22" height="5" rx="2.5" fill="var(--text)" opacity=".8"/>
-        <rect x="344" y="101" width="14" height="4" rx="2" fill="var(--muted)" opacity=".7"/>
-      </g>
-    </svg>
-  </template>
 
   <script>
     // To add a project, add an object here. Each project opens its own page, with its own look.
@@ -489,7 +444,7 @@
         var ghost = document.createElement("div");
         ghost.className = "proj ghost";
         var gt = document.createElement("div"); gt.className = "thumb";
-        gt.appendChild(document.getElementById("snugArt").content.cloneNode(true));
+        var gi = document.createElement("img"); gi.src = "snug-thumb.png?v=1"; gi.alt = "Snug app preview: feedings, diaper changes, and sleep on a phone"; gi.loading = "lazy"; gt.appendChild(gi);
         var soon = document.createElement("span"); soon.className = "soon"; soon.textContent = "Coming soon";
         gt.appendChild(soon); ghost.appendChild(gt);
         [["h3", "Snug"], ["p", "Consumer app", "cat"], ["p", "An AI-native baby tracker, in the works.", "desc"]].forEach(function (x) {

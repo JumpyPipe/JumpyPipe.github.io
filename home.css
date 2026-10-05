@@ -402,7 +402,7 @@ li[data-co="a"] .stat { --c: #f6a85c; } li[data-co="t"] .stat { --c: #5fcf9a; } 
 .proj .desc { margin: 6px 4px 0; color: var(--muted); font-size: .88rem; line-height: 1.5; }
 .proj.ghost { pointer-events: none; }
 .proj.ghost .thumb { position: relative; background: linear-gradient(135deg, var(--snug-1), var(--snug-2)); }
-.proj.ghost .thumb svg { display: block; width: 100%; height: 100%; }
+.proj.ghost .thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .proj.ghost:hover { transform: none; }
 .soon {
   position: absolute; top: 10px; left: 10px; padding: 4px 11px; border-radius: 999px;
