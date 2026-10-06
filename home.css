@@ -695,3 +695,17 @@ html.js .art.rise:not(.in) { transform: translateY(20px); }
   .logos { justify-content: flex-start; gap: 12px 24px; }
 }
 @media (max-width: 860px) { .hero3::before { right: -30%; width: 120%; top: -10%; height: 90%; } }
+
+/* experience: a visual next to the highlights */
+.jbody.has-fig { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); gap: 8px 22px; align-items: start; border-top: 1px solid var(--line); padding: 0 18px 18px 0; }
+.jbody.has-fig .bul { border-top: 0; padding: 16px 0 0 38px; }
+.jfig { margin: 16px 0 0; }
+.jfig img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.jfig figcaption { margin-top: 8px; color: var(--muted); font-size: .76rem; line-height: 1.4; }
+.job[open] .jbody { animation: swap .22s ease-out; }
+@media (max-width: 720px) {
+  .jbody.has-fig { grid-template-columns: minmax(0, 1fr); padding: 0 16px 18px; }
+  .jbody.has-fig .bul { padding: 14px 0 0 22px; }
+  .jfig { order: -1; margin-top: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .job[open] .jbody { animation: none; } }
