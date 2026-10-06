@@ -14,7 +14,7 @@
     document.documentElement.classList.add("js");
     try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="home.css?v=29">
+  <link rel="stylesheet" href="home.css?v=32">
 </head>
 <body>
   <header class="hdr" id="top">
@@ -22,9 +22,9 @@
       <a class="brand" href="#home" aria-label="Akash Mehta, home"><span class="mark" aria-hidden="true">A</span><span class="bname">Akash Mehta</span></a>
       <nav class="hnav" aria-label="Sections">
         <a href="#home" data-nav="home">Home</a>
-        <a href="#experience" data-nav="experience">Experience</a>
-        <a href="#work" data-nav="work">Work</a>
         <a href="#about" data-nav="about">About</a>
+        <a href="#portfolio" data-nav="portfolio">Portfolio</a>
+        <a href="#experience" data-nav="experience">Experience</a>
         <a href="#contact" data-nav="contact">Contact</a>
       </nav>
       <div class="hact">
@@ -42,7 +42,7 @@
       <p class="h-sub rise" style="--i:2">I&rsquo;m Akash. I turn customer signals into search, recommendations, and AI experiences, and I lead the teams that ship them.</p>
       <div class="cta center rise" style="--i:3">
         <a class="btn filled lg" href="https://linkedin.com/in/akashsmehta"><svg class="i" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>Message me on LinkedIn</a>
-        <a class="btn outlined lg" href="#work">See my work</a>
+        <a class="btn outlined lg" href="#portfolio">See my portfolio</a>
       </div>
     </div>
     <div class="wrap hero2-proof">
@@ -74,6 +74,65 @@
       <div class="svc two">
         <div class="card rise" style="--i:1"><div><h3>For larger teams</h3><p>Setting product strategy for AI and ranking systems, aligning engineering, data science, and design, and leading PMs through ambiguity to measurable revenue. I have led seven PMs.</p></div></div>
         <div class="card rise" style="--i:2"><div><h3>For early-stage teams</h3><p>Taking ideas from zero to launched. I have shipped 0&rarr;1 products at Amazon and build and ship my own AI products end to end.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt" id="about" data-section="about">
+    <div class="wrap">
+      <div class="sec-head rise" style="--i:0">
+          <span class="eyebrow">About</span>
+          <h2 class="sec-title">Hi, I&rsquo;m Akash.</h2>
+          <p class="sec-lede"></p>
+        </div>
+      <div class="prose big rise" style="--i:1">
+        <p>I lead product for search and recommendations, with a team covering search quality, ranking, personalization, and AI-guided experiences. I like turning fuzzy problems into clear plans that engineers and executives both want to build.</p>
+        <p>Outside work, I build small AI-powered tools to learn by shipping. The latest is a portfolio activity dashboard, and I am working on an AI-native baby tracker called Snug.</p>
+      </div>
+      <div class="svc">
+          <div class="card rise" style="--i:3">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+            <div><h3>Search and discovery</h3><p>Helping people find what they came for, from query understanding to ranking quality.</p></div>
+          </div>
+          <div class="card rise" style="--i:4">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></span>
+            <div><h3>Personalization and recommendations</h3><p>Showing each person what is most relevant to them, and measuring that it works.</p></div>
+          </div>
+          <div class="card rise" style="--i:5">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span>
+            <div><h3>AI-guided experiences</h3><p>Using language models where they make a product simpler, not just newer.</p></div>
+          </div>
+          <div class="card rise" style="--i:6">
+            <span class="ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+            <div><h3>Strategy and alignment</h3><p>Roadmaps, PRDs, and executive updates that keep product, engineering, and ML teams moving together.</p></div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="sec" id="portfolio" data-section="portfolio">
+    <div class="wrap">
+      <div class="sec-head rise" style="--i:0">
+        <span class="eyebrow">Portfolio</span>
+        <h2 class="sec-title">Things I&rsquo;ve built.</h2>
+        <p class="sec-lede">Software I build to learn by shipping, and projects I build with my hands at home.</p>
+      </div>
+      <div class="prow">
+        <h3 class="sub-h first rise" style="--i:1">Software projects</h3>
+        <p class="lede rise" style="--i:2">Open the dashboard to try it.</p>
+        <div class="grid" id="grid"></div>
+      </div>
+      <div class="prow">
+        <h3 class="sub-h rise" style="--i:1">Home projects</h3>
+        <p class="lede rise" style="--i:2">When I am not shipping product, I am building things for our home.</p>
+      <div class="carousel rise" id="carousel" style="--i:9" role="region" aria-roledescription="carousel" aria-label="Home projects">
+          <div class="car-track" id="gallery" tabindex="0" aria-label="Swipe or use the arrow keys to browse projects"></div>
+          <div class="car-nav">
+            <button type="button" class="car-btn" id="carPrev" aria-label="Previous project"><svg class="i" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+            <div class="car-dots" id="carDots"></div>
+            <button type="button" class="car-btn" id="carNext" aria-label="Next project"><svg class="i" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -284,61 +343,6 @@
     </div>
   </section>
 
-  <section class="sec" id="work" data-section="work">
-    <div class="wrap">
-      <div class="sec-head rise" style="--i:0">
-          <span class="eyebrow">Work</span>
-          <h2 class="sec-title">Things I&rsquo;ve built.</h2>
-          <p class="sec-lede">Side projects where I learn by shipping. Open the dashboard to try it.</p>
-        </div>
-
-        <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
-        <div class="grid" id="grid"></div>
-    </div>
-  </section>
-
-  <section class="sec alt" id="about" data-section="about">
-    <div class="wrap">
-      <div class="sec-head rise" style="--i:0">
-          <span class="eyebrow">About</span>
-          <h2 class="sec-title">Hi, I&rsquo;m Akash.</h2>
-          <p class="sec-lede"></p>
-        </div>
-      <div class="prose big rise" style="--i:1">
-        <p>I lead product for search and recommendations, with a team covering search quality, ranking, personalization, and AI-guided experiences. I like turning fuzzy problems into clear plans that engineers and executives both want to build.</p>
-        <p>Outside work, I build small AI-powered tools to learn by shipping. The latest is a portfolio activity dashboard, and I am working on an AI-native baby tracker called Snug.</p>
-      </div>
-      <div class="svc">
-          <div class="card rise" style="--i:3">
-            <span class="ico"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-            <div><h3>Search and discovery</h3><p>Helping people find what they came for, from query understanding to ranking quality.</p></div>
-          </div>
-          <div class="card rise" style="--i:4">
-            <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></span>
-            <div><h3>Personalization and recommendations</h3><p>Showing each person what is most relevant to them, and measuring that it works.</p></div>
-          </div>
-          <div class="card rise" style="--i:5">
-            <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span>
-            <div><h3>AI-guided experiences</h3><p>Using language models where they make a product simpler, not just newer.</p></div>
-          </div>
-          <div class="card rise" style="--i:6">
-            <span class="ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
-            <div><h3>Strategy and alignment</h3><p>Roadmaps, PRDs, and executive updates that keep product, engineering, and ML teams moving together.</p></div>
-          </div>
-        </div>
-      <h3 class="sub-h rise" style="--i:7">Beyond work</h3>
-      <p class="lede rise" style="--i:8">When I am not shipping product, I am building things for our home.</p>
-      <div class="carousel rise" id="carousel" style="--i:9" role="region" aria-roledescription="carousel" aria-label="Home projects">
-          <div class="car-track" id="gallery" tabindex="0" aria-label="Swipe or use the arrow keys to browse projects"></div>
-          <div class="car-nav">
-            <button type="button" class="car-btn" id="carPrev" aria-label="Previous project"><svg class="i" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
-            <div class="car-dots" id="carDots"></div>
-            <button type="button" class="car-btn" id="carNext" aria-label="Next project"><svg class="i" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
-          </div>
-        </div>
-    </div>
-  </section>
-
   <section class="sec contact" id="contact" data-section="contact">
     <div class="aurora soft" aria-hidden="true"><i></i><i></i></div>
     <div class="wrap center-txt">
@@ -423,17 +427,6 @@
 
     var active = "All";
     function renderWork() {
-      var cats = ["All"];
-      projects.forEach(function (p) { if (cats.indexOf(p.category) < 0) cats.push(p.category); });
-      var f = document.getElementById("filters");
-      f.innerHTML = "";
-      cats.forEach(function (c) {
-        var b = document.createElement("button");
-        b.type = "button"; b.className = "chip"; b.textContent = c;
-        b.setAttribute("aria-pressed", String(c === active));
-        b.addEventListener("click", function () { active = c; renderWork(); });
-        f.appendChild(b);
-      });
       var g = document.getElementById("grid");
       g.innerHTML = "";
       projects.filter(function (p) { return active === "All" || p.category === active; }).forEach(function (p) {
@@ -510,8 +503,11 @@
         dots.forEach(function (d, k) { if (k === i) d.setAttribute("aria-current", "true"); else d.removeAttribute("aria-current"); });
         prev.disabled = i === 0; next.disabled = i === cards.length - 1;
       }
+      var box = document.getElementById("carousel");
+      function checkFit() { box.classList.toggle("fits", box.clientWidth >= cards.length * 320 + (cards.length - 1) * 14); }
       function update() {
         ticking = false;
+        checkFit();
         var max = track.scrollWidth - track.clientWidth, i = 0;
         if (track.scrollLeft <= 2) i = 0;
         else if (track.scrollLeft >= max - 2) i = cards.length - 1;
@@ -528,7 +524,7 @@
         if (e.key === "ArrowRight") { e.preventDefault(); go(cur + 1); } else if (e.key === "ArrowLeft") { e.preventDefault(); go(cur - 1); }
       });
       window.addEventListener("resize", update);
-      paint(0);
+      paint(0); checkFit();
     })();
 
     // Theme toggle: follows the device by default; a click overrides and is remembered.

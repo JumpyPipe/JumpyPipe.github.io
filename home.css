@@ -629,3 +629,11 @@ html.js .arc:not(.in) .arc-ribbon, html.js .arc:not(.in) .node, html.js .arc:not
 }
 .carousel { --pad: 28px; }
 @media (max-width: 720px) { .carousel { --pad: 20px; } }
+.prow + .prow { margin-top: 72px; }
+.sub-h.first { margin-top: 0; }
+.prow .lede { margin: 0 0 22px; }
+/* When every card already fits (desktop), show them all at full strength with no arrows or dots */
+.carousel.fits .hp { opacity: 1; }
+.carousel.fits .car-nav { display: none; }
+.carousel.fits .car-track { margin: 0; padding-left: 0; padding-right: 0; }
+.carousel.fits .hp { flex: 1 1 0; min-width: 0; }
