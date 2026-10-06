@@ -696,16 +696,23 @@ html.js .art.rise:not(.in) { transform: translateY(20px); }
 }
 @media (max-width: 860px) { .hero3::before { right: -30%; width: 120%; top: -10%; height: 90%; } }
 
-/* experience: a visual next to the highlights */
-.jbody.has-fig { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); gap: 8px 22px; align-items: start; border-top: 1px solid var(--line); padding: 0 18px 18px 0; }
-.jbody.has-fig .bul { border-top: 0; padding: 16px 0 0 38px; }
-.jfig { margin: 16px 0 0; }
-.jfig img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); box-shadow: var(--shadow); }
-.jfig figcaption { margin-top: 8px; color: var(--muted); font-size: .76rem; line-height: 1.4; }
+/* experience: image across the top of an opened role, fading into a two-column grid of highlights */
+.jbody.hero-fig { border-top: 1px solid var(--line); padding: 0; overflow: hidden; border-radius: 0 0 17px 17px; }
+.jpic { position: relative; margin: 0; }
+.jpic img { display: block; width: 100%; height: auto; }
+.jpic::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 62%, var(--panel-2) 100%); }
+:root:not([data-theme="light"]) .jpic::before { content: ""; position: absolute; inset: 0; z-index: 1; background: rgba(0, 0, 0, .14); }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .jpic::before { display: none; } }
+:root[data-theme="light"] .jpic::before { display: none; }
+.jpic::after { z-index: 2; }
+.jgrid { position: relative; z-index: 3; list-style: none; margin: -40px 0 0; padding: 0 22px 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 28px; color: var(--muted); font-size: .9rem; line-height: 1.55; }
+.jgrid li { position: relative; padding-left: 14px; }
+.jgrid li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.jgrid li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.jgrid .ld { color: var(--text); font-weight: 650; }
+.jgrid b.m { color: var(--text); font-weight: 700; }
 .job[open] .jbody { animation: swap .22s ease-out; }
 @media (max-width: 720px) {
-  .jbody.has-fig { grid-template-columns: minmax(0, 1fr); padding: 0 16px 18px; }
-  .jbody.has-fig .bul { padding: 14px 0 0 22px; }
-  .jfig { order: -1; margin-top: 16px; }
+  .jgrid { grid-template-columns: minmax(0, 1fr); margin-top: -22px; padding: 0 16px 18px; }
 }
 @media (prefers-reduced-motion: reduce) { .job[open] .jbody { animation: none; } }
