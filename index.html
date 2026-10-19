@@ -46,7 +46,7 @@
         </div>
       </div>
       <div class="art rise" style="--i:2" aria-hidden="true">
-        <figure class="a"><img src="hero-snug.jpg" alt="" width="760" height="380"><figcaption>Snug, an AI-native baby tracker</figcaption></figure>
+        <figure class="a"><img src="hero-snug.jpg" alt="" width="760" height="380"><figcaption>Little Days, a baby tracker</figcaption></figure>
         <figure class="b"><img src="hero-entry.jpg" alt="" width="620" height="465"><figcaption>The entryway, built by hand</figcaption></figure>
       </div>
     </div>
@@ -94,7 +94,7 @@
         </div>
       <div class="prose big rise" style="--i:1">
         <p>I lead product for search and recommendations, with a team covering search quality, ranking, personalization, and AI-guided experiences. I like turning fuzzy problems into clear plans that engineers and executives both want to build.</p>
-        <p>Outside work, I build small AI-powered tools to learn by shipping. The latest is a portfolio activity dashboard, and I am working on an AI-native baby tracker called Snug.</p>
+        <p>Outside work, I build small AI-powered tools to learn by shipping. The latest is a portfolio activity dashboard, and I recently launched a baby tracker called Little Days.</p>
       </div>
       <div class="svc">
           <div class="card rise" style="--i:3">
@@ -386,6 +386,14 @@
         href: "dashboard.html",
         img: "project-thumb.png?v=1",
         alt: "Preview of the portfolio activity dashboard showing account value and growth"
+      },
+      {
+        title: "Little Days",
+        category: "Consumer app",
+        desc: "A baby tracker for feedings, diapers, pumping, and growth, with age-based guidance from the CDC and pediatric sources.",
+        href: "https://little-days-baby-tracker.squirlyvision.chatgpt.site/",
+        img: "little-days-thumb.png?v=1",
+        alt: "Little Days app: age-based feeding guidance cards citing the AAP, Cleveland Clinic and CDC"
       }
     ];
 
@@ -446,6 +454,7 @@
       projects.filter(function (p) { return active === "All" || p.category === active; }).forEach(function (p) {
         var a = document.createElement("a");
         a.className = "proj"; a.href = p.href;
+        if (/^https?:/.test(p.href)) { a.target = "_blank"; a.rel = "noopener"; }
         var t = document.createElement("div"); t.className = "thumb";
         var img = document.createElement("img"); img.src = p.img; img.alt = p.alt; img.loading = "lazy";
         t.appendChild(img); a.appendChild(t);
@@ -454,18 +463,6 @@
         });
         g.appendChild(a);
       });
-      if (active === "All") {
-        var ghost = document.createElement("div");
-        ghost.className = "proj ghost";
-        var gt = document.createElement("div"); gt.className = "thumb";
-        var gi = document.createElement("img"); gi.src = "snug-thumb.png?v=1"; gi.alt = "Snug app preview: feedings, diaper changes, and sleep on a phone"; gi.loading = "lazy"; gt.appendChild(gi);
-        var soon = document.createElement("span"); soon.className = "soon"; soon.textContent = "Coming soon";
-        gt.appendChild(soon); ghost.appendChild(gt);
-        [["h3", "Snug"], ["p", "Consumer app", "cat"], ["p", "An AI-native baby tracker, in the works.", "desc"]].forEach(function (x) {
-          var e = document.createElement(x[0]); e.textContent = x[1]; if (x[2]) e.className = x[2]; ghost.appendChild(e);
-        });
-        g.appendChild(ghost);
-      }
     }
 
 
